@@ -11,3 +11,5 @@ lightgbm
 joblib
 IPython
 category_encoders
+streamlit
+nltk

@@ -2,7 +2,7 @@
 # **Fake Job Detection: AI-Powered Fraud Prevention**
 
 🌟 **Detect Fake Job Postings with Machine Learning**  
-This project leverages cutting-edge **machine learning** and **natural language processing (NLP)** techniques to identify fraudulent job postings, empowering users to navigate the job market safely and confidently.
+This project leverages cutting-edge **machine learning**  techniques to identify fraudulent job postings, empowering users to navigate the job market safely and confidently.
 
 ---
 
@@ -24,7 +24,7 @@ This project leverages cutting-edge **machine learning** and **natural language 
   - Gradient Boosting (XGBoost, LightGBM)  
 - **Performance Metrics**: Accuracy, Precision, Recall, F1-Score, and AUC.  
 
-The **Random Forest Classifier** stood out with superior performance across key metrics.
+The **LightGBM** stood out with superior performance across key metrics.
 
 ---
 

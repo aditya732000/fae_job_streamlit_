@@ -41,12 +41,12 @@ def preprocess_user_input(title, description, requirements, company_profile, ben
     input_data['company'] = input_data['company'].apply(preprocess_text)
 
     # Apply TF-IDF on the 'company' column (using pre-trained TF-IDF model)
-    tfidf = joblib.load('tfidf_transformer.pkl')  # Load the previously trained transformer
+    tfidf = joblib.load('./Notebooks/tfidf_transformer.pkl')  # Load the previously trained transformer
     tfidf_matrix = tfidf.transform(input_data['company'])
     input_data_tfidf = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf.get_feature_names_out())
 
     # Encode categorical columns (using pre-trained target_encoder)
-    target_encoder = joblib.load('target_encoder.pkl')  # Load the encoder
+    target_encoder = joblib.load('./Notebooks/target_encoder.pkl')  # Load the encoder
     encoded_data = target_encoder.transform(input_data[['required_education', 'industry', 'function']])
 
     # Combine the encoded data with other columns
@@ -59,7 +59,7 @@ def preprocess_user_input(title, description, requirements, company_profile, ben
     return input_data_encoded
 
 # Load the LightGBM model
-model = joblib.load('lightgbm_best_model.pkl')
+model = joblib.load('./Notebooks/lightgbm_best_model.pkl')
 
 # Prediction function
 def predict_fraud(input_data_encoded):
@@ -251,9 +251,9 @@ def main():
 
         # Display an appropriate image based on prediction result
         if result == "✅ The job post is legitimate.":
-            st.image("techno.png", width=50)  # Use the "techno" image for legitimate result
+            st.image("./Images/techno.png", width=50)  # Use the "techno" image for legitimate result
         else:
-            st.image("alerte.png", width=50)  # Use the "alerte" image for fraudulent result
+            st.image("./Images/alerte.png", width=50)  # Use the "alerte" image for fraudulent result
 
     # Footer section
     st.markdown("""
@@ -280,7 +280,7 @@ def add_bg_from_local(image_path):
         unsafe_allow_html=True
     )
 
-add_bg_from_local('imago.png')
+add_bg_from_local('./Images/imago.png')
 
 
 if __name__ == "__main__":

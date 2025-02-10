@@ -14,5 +14,3 @@ env/
 venv/
 
 # Ignore unnecessary files
-*.zip
-*.pkl
